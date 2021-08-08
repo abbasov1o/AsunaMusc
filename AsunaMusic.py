@@ -49,7 +49,7 @@ def a(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply('🔎 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠 𝐭𝐡𝐞 𝐬𝐨𝐧𝐠...')
+    m = message.reply('🔎 Axtarılır...')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -79,7 +79,7 @@ def a(client, message):
 
         except Exception as e:
             print(e)
-            m.edit('𝐅𝐨𝐮𝐧𝐝 𝐍𝐨𝐭𝐡𝐢𝐧𝐠. 𝐓𝐫𝐲 𝐂𝐡𝐚𝐧𝐠𝐢𝐧𝐠 𝐓𝐡𝐞 𝐒𝐩𝐞𝐥𝐥𝐢𝐧𝐠 𝐀 𝐋𝐢𝐭𝐭𝐥𝐞 😕')
+            m.edit('Heçnə tapılmadı! Düzgün yazın')
             return
     except Exception as e:
         m.edit(
@@ -87,7 +87,7 @@ def a(client, message):
         )
         print(str(e))
         return
-    m.edit("🔎 Axtarılır [🚀](https://telegra.ph/file/877a46d5721e499b8983a.mp4)")
+    m.edit("🔎 Yüklənir [🚀](https://telegra.ph/file/877a46d5721e499b8983a.mp4)")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
