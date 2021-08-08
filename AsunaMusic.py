@@ -29,7 +29,7 @@ def time_to_seconds(time):
 ## Commands --------------------------------
 @bot.on_message(filters.command(['start']))
 def start(client, message):
-    Asuna = f'👋Salam {message.from_user.mention}\n\n𝗜Musiqi yükəmə botuyam🎸AsunaMusic𝐭[🎶](https://telegra.ph/file/aa3d30131515e46a83f3c.mp4)\n\nNümunə:`/musiqi Miro Sevgin batsın`'
+    Asuna = f'👋Salam {message.from_user.mention}\n\nMusiqi yükəmə botuyam🎸AsunaMusic[🎶](https://telegra.ph/file/aa3d30131515e46a83f3c.mp4)\n\nNümunə:`/musiqi Miro Sevgin batsın`'
     message.reply_text(
         text=Asuna, 
         quote=False,
