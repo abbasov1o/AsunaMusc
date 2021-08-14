@@ -29,7 +29,7 @@ def time_to_seconds(time):
 ## Commands --------------------------------
 @bot.on_message(filters.command(['start']))
 def start(client, message):
-    Asuna = f'👋Salam {message.from_user.mention}\n\nMusiqi yükəmə botuyam🎸AsunaMusic[🎶](https://telegra.ph/file/aa3d30131515e46a83f3c.mp4)\n\nNümunə:`/musiqi Miro Sevgin batsın`'
+    Asuna = f'👋Salam {message.from_user.mention}\n\nMusiqi yükəmə botuyam🎸AsunaMusic\nNümunə:`/musiqi Miro Sevgin batsın`'
     message.reply_text(
         text=Asuna, 
         quote=False,
@@ -87,13 +87,13 @@ def a(client, message):
         )
         print(str(e))
         return
-    m.edit("🔎 Yüklənir [🚀](https://telegra.ph/file/877a46d5721e499b8983a.mp4)")
+    m.edit("🔎 Yüklənir")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎧Başlıq: [{title[:35]}]({link})\n⏳Müddət: `{duration}`\n🎬Mənbə: [Youtube]({link})\n👁‍🗨 Baxış: `{views}`\n\n💌 𝐁𝐲 : @AsunaMusiccBot'
+        rep = f'🎧Başlıq: [{title[:35]}]({link})\n⏳Müddət: `{duration}`\n🎬Mənbə: [Youtube]({link})\n👁‍🗨 Baxış: `{views}`\n\n@AsunaMusiccBot'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
