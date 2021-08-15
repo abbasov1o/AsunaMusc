@@ -37,7 +37,7 @@ async def time_to_seconds(time):
 
 ## Commands --------------------------------
 @bot.on_message(filters.command("start")&filters.private
-def star(client, message):
+def start(client, message):
     Asuna = f'👋Salam {message.from_user.mention}\nMusiqi yükləmə botuyam💿\n\nNümunə:`/musiqi Miro Sevgin batsın`'
     message.reply_text(
         text=Asuna, 
