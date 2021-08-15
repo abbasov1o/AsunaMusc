@@ -104,7 +104,7 @@ def a(client, message):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
             quote=False,
-            reply_markup=InlineKeyboardMarkup(
+            aso=reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton('Kanal🇦🇿', url='https://t.me/zenmusiqi'),
@@ -113,7 +113,7 @@ def a(client, message):
             ]
         )
     
-        message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, caption=reply_markup)
+        message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, caption=aso)
         m.delete()
     except Exception as e:
         m.edit('❌Xəta\n\n Xətanı bildirmək üçün @abbasov1o ❤️')
