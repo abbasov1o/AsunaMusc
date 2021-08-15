@@ -45,7 +45,7 @@ def start(client, message):
     )
 
 @TG.on_message(filters.command("start")&filters.group
-async def start(client, message):
+def start(client, message):
     Asuna = f'👋Salam {message.from_user.mention}\nMusiqi yükləmə botuyam💿\n\nNümunə:`/musiqi Miro Sevgin batsın`'
     message.reply_text(
         text=Asuna, 
