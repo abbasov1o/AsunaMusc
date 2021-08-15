@@ -111,7 +111,7 @@ def a(client, message):
             ]
         ]
     )
-    await message.reply_audio(
+    await query.message.reply_audio(music, reply_markup=music_keyboard(music_id))
     reply_markup=butts,
     caption=rep,
         secmul, dur, dur_arr = 1, 0, duration.split(':')
