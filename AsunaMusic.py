@@ -97,6 +97,16 @@ def a(client, message):
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
+        reply_markup=InlineKeyboardMarkup(
+
+                [
+
+                    InlineKeyboardButton('Kanal🇦🇿', url='https://t.me/zenmusiqi')
+
+                    
+                ]
+
+        )
         message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name)
         m.delete()
     except Exception as e:
