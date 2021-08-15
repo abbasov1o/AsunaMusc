@@ -19,6 +19,10 @@ bot = Client(
     api_hash = Config.API_HASH
 )
 
+def bmusiqi():
+	BUTTON=[[InlineKeyboardButton(text="🔊 Rəsmi Kanal", url="https://t.me/zenmusiqi")]]
+	BUTTON+=[[InlineKeyboardButton(text="➕ Grupa Əlavə Et ➕", url=f"https://t.me/song_azbot?startgroup=true")]]
+	return InlineKeyboardMarkup(BUTTON)
 ## Extra Fns -------------------------------
 
 # Convert hh:mm:ss to seconds
