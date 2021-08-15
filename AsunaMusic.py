@@ -111,6 +111,8 @@ def a(client, message):
     try:
         os.remove(audio_file)
         os.remove(thumb_name)
+    except Exception as e:
+        print(e)
         audio_file(
         reply_markup=InlineKeyboardMarkup(
             [
@@ -121,7 +123,5 @@ def a(client, message):
             ]
         )
     )
-    except Exception as e:
-        print(e)
 
 bot.run()
