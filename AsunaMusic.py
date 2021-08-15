@@ -111,7 +111,7 @@ def a(client, message):
     try:
         os.remove(audio_file)
         os.remove(thumb_name)
-        message.reply_audio_file(
+        audio_file(
         reply_markup=InlineKeyboardMarkup(
             [
                 [
