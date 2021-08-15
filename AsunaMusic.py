@@ -98,7 +98,7 @@ def a(client, message):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
             message.reply_text(
-        text=rep, 
+            text=rep, 
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [
@@ -109,9 +109,6 @@ def a(client, message):
             ]
         )
     )
-    
-
-
         message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name)
         m.delete()
     except Exception as e:
