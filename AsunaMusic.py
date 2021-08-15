@@ -103,7 +103,7 @@ def a(client, message):
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
-            quote=True,
+            quote=False,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -113,7 +113,7 @@ def a(client, message):
                 ]
             )
     
-        message.reply_audio(reply_markup, audio_file, caption=rep, parse_mode='md', quote=True, title=title, thumb=thumb_name)
+        message.reply_audio(reply_markup, audio_file, caption=rep, parse_mode='md', quote=False, title=title, thumb=thumb_name)
         m.delete()
     except Exception as e:
         m.edit('❌Xəta\n\n Xətanı bildirmək üçün @abbasov1o ❤️')
