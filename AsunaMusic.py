@@ -1,4 +1,7 @@
-
+import logging
+from telegram import Update, ForceReply
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
+from telegram.files.audio import Audio
 from pyrogram import Client, filters
 from pyrogram.types import (
     InlineKeyboardButton,
