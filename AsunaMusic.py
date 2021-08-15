@@ -104,18 +104,13 @@ def a(client, message):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
         message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name)
-        reply_to_message_id=update.message_id,
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton
-                                (
-                                    '👨‍💼 𝙳𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛𝚜 👨‍💼', url="https://t.me/Cybermediaworks"
-                                )
-                        ]
-                    ]
-                )
-            )
+        buttons = [[
+        InlineKeyboardButton('👨‍💼 𝙼𝚊𝚜𝚝𝚎𝚛', url='https://t.me/Cybermediaworks')
+    ],[
+        InlineKeyboardButton('🔐 𝙲𝚕𝚘𝚜𝚎 🔐', callback_data='close')
+   ]]
+    
+    reply_markup = InlineKeyboardMarkup(buttons)
         m.delete()
     except Exception as e:
         m.edit('❌Xəta\n\n Xətanı bildirmək üçün @abbasov1o ❤️')
