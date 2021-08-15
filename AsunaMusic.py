@@ -83,7 +83,7 @@ def a(client, message):
             return
     except Exception as e:
         m.edit(
-            "✖️Xahiş nümunədə olduğu kimi qeyd edin`/musiqi Miro Sevgin batsın`"
+            "✖️Xahiş nümunədə olduğu kimi qeyd edin`\n/musiqi Miro Sevgin batsın`"
         )
         print(str(e))
         return
@@ -98,6 +98,17 @@ def a(client, message):
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Kanal🇦🇿', url='https://t.me/zenmusiqi'),
+                    InlineKeyboardButton('Qrupa əlavə et🇦🇿', url='https://t.me/song_azbot?startgroup=true')
+                ]
+            ]
+        )
+    )
+
+
         message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name)
         m.delete()
     except Exception as e:
