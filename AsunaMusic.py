@@ -111,7 +111,7 @@ def a(client, message):
             ]
         ]
     )
-    await message.reply_ydl(
+    await message.reply_butts(
     reply_markup=butts,
     caption=rep,
         secmul, dur, dur_arr = 1, 0, duration.split(':')
