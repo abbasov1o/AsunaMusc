@@ -105,13 +105,13 @@ def a(client, message):
             secmul *= 60
             quote=True,
             reply_markup=InlineKeyboardMarkup(
-            [
                 [
-                    InlineKeyboardButton('Kanal🇦🇿', url='https://t.me/zenmusiqi'),
-                    InlineKeyboardButton('Qrupa əlavə et', url='https://t.me/song_azbot?startgroup=true')
+                    [
+                        InlineKeyboardButton('Kanal🇦🇿', url='https://t.me/zenmusiqi'),
+                        InlineKeyboardButton('Qrupa əlavə et', url='https://t.me/song_azbot?startgroup=true')
+                    ]
                 ]
-            ]
-        )
+            )
     
         message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=True, title=title, duration=dur, thumb=thumb_name)
         m.delete()
