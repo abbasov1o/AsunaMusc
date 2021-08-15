@@ -111,7 +111,7 @@ def a(client, message):
             ]
         ]
     )
-    await message.reply_rep(
+    await message.reply_audio(
     reply_markup=butts,
     caption=rep,
         secmul, dur, dur_arr = 1, 0, duration.split(':')
