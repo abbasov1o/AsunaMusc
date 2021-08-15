@@ -12,7 +12,7 @@ import requests
 import os
 from config import Config
 
-TG = Client(
+bot = Client(
     'AsunaMusic',
     bot_token = Config.BOT_TOKEN,
     api_id = Config.API_ID,
@@ -28,7 +28,7 @@ def time_to_seconds(time):
 
 
 ## Commands --------------------------------
-@TG.on_message(filters.command("start")&filters.private
+@bot.on_message(filters.command("start")&filters.private
 def start(client, message):
     Asuna = f'👋Salam {message.from_user.mention}\nMusiqi yükləmə botuyam💿\n\nNümunə:`/musiqi Miro Sevgin batsın`'
     message.reply_text(
@@ -44,7 +44,7 @@ def start(client, message):
         )
     )
 
-@TG.on_message(filters.command("start")&filters.group
+@bot.on_message(filters.command("start")&filters.group
 def start(client, message):
     Asuna = f'👋Salam {message.from_user.mention}\nMusiqi yükləmə botuyam💿\n\nNümunə:`/musiqi Miro Sevgin batsın`'
     message.reply_text(
@@ -60,7 +60,7 @@ def start(client, message):
         )
     )
 
-@TG.on_message(filters.command("musiqi")&filters.private
+@bot.on_message(filters.command("musiqi")&filters.private
 def a(client, message):
     query = ''
     for i in message.command[1:]:
@@ -136,7 +136,7 @@ def a(client, message):
     except Exception as e:
         print(e)
 
-@TG.on_message(filters.command("musiqi")&filters.group
+@bot.on_message(filters.command("musiqi")&filters.group
 def a(client, message):
     query = ''
     for i in message.command[1:]:
