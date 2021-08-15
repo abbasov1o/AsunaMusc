@@ -106,7 +106,7 @@ def a(client, message):
                 ]
             ]
         )
-    )
+    
 
 
         message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name)
