@@ -102,8 +102,8 @@ def a(client, message):
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
-            reply_markup: {
-              inline_keyboard: [
+            reply_markup:{
+              inline_keyboard:[
                 [
                   (text: 'PlayList🎵', url='https:t.me/zenmusiqi')
                 ]
