@@ -33,7 +33,7 @@ async def time_to_seconds(time):
 
 ## Commands --------------------------------
 @bot.on_message(filters.command("start")&filters.private
-async def star(client, message):
+def star(client, message):
     Asuna = f'👋Salam {message.from_user.mention}\nMusiqi yükləmə botuyam💿\n\nNümunə:`/musiqi Miro Sevgin batsın`'
     message.reply_text(
         text=Asuna, 
@@ -49,7 +49,7 @@ async def star(client, message):
     )
 
 @bot.on_message(filters.command("start")&filters.group
-async def start(client, message):
+def start(client, message):
     Asuna = f'👋Salam {message.from_user.mention}\nMusiqi yükləmə botuyam💿\n\nNümunə:`/musiqi Miro Sevgin batsın`'
     message.reply_text(
         text=Asuna, 
@@ -65,7 +65,7 @@ async def start(client, message):
     )
 
 @bot.on_message(filters.command("musiqi")&filters.private
-async def a(client, message):
+def a(client, message):
     query = ''
     for i in message.command[1:]:
         query += ' ' + str(i)
@@ -141,7 +141,7 @@ async def a(client, message):
         print(e)
 
 @bot.on_message(filters.command("musiqi")&filters.group
-async def a(client, message):
+def a(client, message):
     query = ''
     for i in message.command[1:]:
         query += ' ' + str(i)
