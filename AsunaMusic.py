@@ -4,6 +4,7 @@ from pyrogram.types import (
     InlineKeyboardButton,
     InlineKeyboardMarkup
 )
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 import youtube_dl
 from youtube_search import YoutubeSearch
 import requests
@@ -103,14 +104,18 @@ def a(client, message):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
         message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name)
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton('Kanal🇦🇿', url='https://t.me/zenmusiqi'),
-                    InlineKeyboardButton('Qrupa əlavə et', url='https://t.me/song_azbot?startgroup=true')
-                ]
-            ]
-        )
+        reply_to_message_id=update.message_id,
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton
+                                (
+                                    '👨‍💼 𝙳𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛𝚜 👨‍💼', url="https://t.me/Cybermediaworks"
+                                )
+                        ]
+                    ]
+                )
+            )
         m.delete()
     except Exception as e:
         m.edit('❌Xəta\n\n Xətanı bildirmək üçün @abbasov1o ❤️')
