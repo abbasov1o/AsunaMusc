@@ -109,7 +109,7 @@ def a(client, message):
                 ]
             )
     
-        message.reply_audio(audio_file, reply_markup, caption=rep, parse_mode='md', title=title, thumb=thumb_name)
+        message.reply_audio(audio_file, caption=rep, parse_mode='md', title=title, thumb=thumb_name, reply_markup)
         m.delete()
     except Exception as e:
         m.edit('❌Xəta\n\n Xətanı bildirmək üçün @abbasov1o ❤️')
