@@ -1,5 +1,4 @@
 #Kirito Z E N
-from telegram.files.audio import Audio
 from pyrogram import Client, filters
 from pyrogram.types import (
     InlineKeyboardButton,
