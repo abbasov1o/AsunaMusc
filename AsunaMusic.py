@@ -96,8 +96,7 @@ def a(client, message):
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
-        message.reply_audio(
-        audio=rep, 
+        message.reply_audio( 
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [
