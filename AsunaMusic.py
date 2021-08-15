@@ -42,7 +42,10 @@ def start(client, message):
             ]
         )
     )
-
+from pyrogram.types import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup
+)
 @bot.on_message(filters.command(['musiqi']))
 def a(client, message):
     query = ''
