@@ -111,6 +111,16 @@ def a(client, message):
     try:
         os.remove(audio_file)
         os.remove(thumb_name)
+        message.reply_audio(
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('Kanal🇦🇿', url='https://t.me/zenmusiqi'),
+                    InlineKeyboardButton('Qrupa əlavə et', url='https://t.me/song_azbot?startgroup=true')
+                ]
+            ]
+        )
+    )
     except Exception as e:
         print(e)
 
