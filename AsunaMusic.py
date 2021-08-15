@@ -42,10 +42,6 @@ def start(client, message):
             ]
         )
     )
-from pyrogram.types import (
-    InlineKeyboardButton,
-    InlineKeyboardMarkup
-)
 @bot.on_message(filters.command(['musiqi']))
 def a(client, message):
     query = ''
@@ -90,7 +86,7 @@ def a(client, message):
         )
         print(str(e))
         return
-    m.edit("🔎 Yüklənir")
+    m.edit("📥 Yüklənir")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
