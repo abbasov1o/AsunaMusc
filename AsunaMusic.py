@@ -99,6 +99,7 @@ def a(client, message):
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
         rep = f'🇦🇿**{title[:35]}** | @song_azbot' 
+        text=rep,
         keyboard = InlineKeyboardMarkup(inline_keyboard=[
             [InlineKeyboardButton(text="PlayList🎵", url='https://t.me/zenmusiqi')],
             ])
