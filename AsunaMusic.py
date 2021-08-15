@@ -99,12 +99,10 @@ def a(client, message):
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
         rep = f'🇦🇿**{title[:35]}** | @song_azbot' 
-        reply_markup=InlineKeyboardMarkup(
-                                [
-                                        InlineKeyboardButton(
-                                            "PlayList🎵", url="https://t.me/zenmusiqi")
-                                    ]
-                            ),
+        keyboard = InlineKeyboardMarkup(inline_keyboard=[
+            [InlineKeyboardButton(text="PlayList🎵", url='https://t.me/zenmusiqi')],
+            ])
+
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
