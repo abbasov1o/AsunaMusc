@@ -42,6 +42,11 @@ def start(client, message):
             ]
         )
     )
+
+from pyrogram.types import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup
+)
 @bot.on_message(filters.command(['musiqi']))
 def a(client, message):
     query = ''
@@ -97,6 +102,7 @@ def a(client, message):
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
+        message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name)
         reply_markup=InlineKeyboardMarkup(
 
                 [
@@ -107,7 +113,6 @@ def a(client, message):
                 ]
 
         )
-        message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name)
         m.delete()
     except Exception as e:
         m.edit('❌Xəta\n\n Xətanı bildirmək üçün @abbasov1o ❤️')
