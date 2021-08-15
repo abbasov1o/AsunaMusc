@@ -105,7 +105,7 @@ def a(client, message):
             reply_markup:{
               inline_keyboard:[
                 [
-                  InlineKeyboardButton(text: 'PlayList🎵', url='https:t.me/zenmusiqi')
+                  ( text: 'PlayList🎵', url='https://t.me/zenmusiqi')
                 ]
               ]
            }
