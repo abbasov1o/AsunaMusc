@@ -23,7 +23,7 @@ TG = Client(
     api_hash = Config.API_HASH
 )
 
-def ydl(client, message):
+def ydl():
 	BUTTON=[[InlineKeyboardButton(text="🔊 Rəsmi Kanal", url="https://t.me/zenmusiqi")]]
 	BUTTON+=[[InlineKeyboardButton(text="➕ Grupa Əlavə Et ➕", url=f"https://t.me/song_azbot?startgroup=true")]]
 	return InlineKeyboardMarkup(BUTTON)
@@ -143,6 +143,11 @@ def a(client, message):
         os.remove(thumb_name)
     except Exception as e:
         print(e)
+
+def ydl():
+	BUTTON=[[InlineKeyboardButton(text="🔊 Rəsmi Kanal", url="https://t.me/zenmusiqi")]]
+	BUTTON+=[[InlineKeyboardButton(text="➕ Grupa Əlavə Et ➕", url=f"https://t.me/song_azbot?startgroup=true")]]
+	return InlineKeyboardMarkup(BUTTON)
 
 @TG.on_message(filters.command("musiqi")&filters.group)
 def a(client, message):
