@@ -130,7 +130,7 @@ def a(client, message):
             item_yes = types.InlineKeyboardButton(text = 'PlayList🎵', url = 'https://t.me/zenmusiqi')
             markup_inline.add(item_yes)
             client.send_message(message.chat.id, 'PlayList🎵'
-                reply_markup = markup_inline
+                reply_markup=markup_inline
             ) 
 
 
