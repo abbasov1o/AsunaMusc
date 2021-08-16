@@ -1,4 +1,6 @@
 #Kirito Z E N
+import telebot
+from telebot import types
 from pyrogram import Client, filters
 from pyrogram.types import (
     InlineKeyboardButton,
