@@ -144,7 +144,7 @@ def a(client, message):
     except Exception as e:
         print(e)
 
-def ydl():
+def ydl(InlineKeyboardButton):
 	BUTTON=[[InlineKeyboardButton(text="🔊 Rəsmi Kanal", url="https://t.me/zenmusiqi")]]
 	BUTTON+=[[InlineKeyboardButton(text="➕ Grupa Əlavə Et ➕", url=f"https://t.me/song_azbot?startgroup=true")]]
 	return InlineKeyboardMarkup(BUTTON)
