@@ -45,8 +45,8 @@ def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Kanal🇦🇿', url='https://t.me/zenmusiqi'),
-                    InlineKeyboardButton('Qrupa əlavə et', url='https://t.me/song_azbot?startgroup=true')
+                    InlineKeyboardButton('PlayList🇦🇿', url='https://t.me/zenmusiqi'),
+                    InlineKeyboardButton('Qrupa əlavə et➕', url='https://t.me/song_azbot?startgroup=true')
                 ]
             ]
         )
@@ -61,8 +61,8 @@ def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Kanal🇦🇿', url='https://t.me/zenmusiqi'),
-                    InlineKeyboardButton('Qrupa əlavə et', url='https://t.me/song_azbot?startgroup=true')
+                    InlineKeyboardButton('PlayList🇦🇿', url='https://t.me/zenmusiqi'),
+                    InlineKeyboardButton('Qrupa əlavə et➕', url='https://t.me/song_azbot?startgroup=true')
                 ]
             ]
         )
@@ -123,7 +123,16 @@ def a(client, message):
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
-            quote=False
+            quote=False,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('PlayList🇦🇿', url='https://t.me/zenmusiqi'),
+                    InlineKeyboardButton('Qrupa əlavə et➕', url='https://t.me/song_azbot?startgroup=true')
+                ]
+            ]
+        )
+    )
 
         message.reply_audio(audio_file, reply_markup, caption=rep, parse_mode='md', title=title, thumb=thumb_name)
         m.delete()
@@ -192,10 +201,18 @@ def a(client, message):
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
-            quote=False
-            
+            quote=False,
+            reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('PlayList🇦🇿', url='https://t.me/zenmusiqi'),
+                    InlineKeyboardButton('Qrupa əlavə et➕', url='https://t.me/song_azbot?startgroup=true')
+                ]
+            ]
+        )
+    )
     
-        message.reply_audio(audio_file, caption=rep, parse_mode='md', title=title, thumb=thumb_name)
+        message.reply_audio(audio_file, reply_markup, caption=rep, parse_mode='md', title=title, thumb=thumb_name)
         m.delete()
     except Exception as e:
         m.edit('❌Xəta\n\n Xətanı bildirmək üçün @abbasov1o ❤️')
