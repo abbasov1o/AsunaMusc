@@ -126,13 +126,6 @@ def a(client, message):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
             quote=False
-            markup_inline = types.InlineKeyboardMarkup()
-            item_yes = types.InlineKeyboardButton(text = 'PlayList🎵', url = 'https://t.me/zenmusiqi')
-            markup_inline.add(item_yes)
-            client.send_message(message.chat.id, 'PlayList🎵'
-                reply_markup=markup_inline
-            ) 
-
 
         message.reply_audio(audio_file, reply_markup, caption=rep, parse_mode='md', title=title, thumb=thumb_name)
         m.delete()
