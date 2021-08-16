@@ -136,10 +136,6 @@ def a(client, message):
     except Exception as e:
         print(e)
 
-def ydl(InlineKeyboardButton):
-	BUTTON=[[InlineKeyboardButton(text="🔊 Rəsmi Kanal", url="https://t.me/zenmusiqi")]]
-	BUTTON+=[[InlineKeyboardButton(text="➕ Grupa Əlavə Et ➕", url=f"https://t.me/song_azbot?startgroup=true")]]
-	return InlineKeyboardMarkup(BUTTON)
 
 @TG.on_message(filters.command("musiqi")&filters.group)
 def a(client, message):
@@ -197,14 +193,7 @@ def a(client, message):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
             quote=False
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton('Kanal🇦🇿', url='https://t.me/zenmusiqi'),
-                        InlineKeyboardButton('Qrupa əlavə et', url='https://t.me/song_azbot?startgroup=true')
-                    ]
-                ]
-            )
+            
     
         message.reply_audio(audio_file, reply_markup, caption=rep, parse_mode='md', title=title, thumb=thumb_name)
         m.delete()
