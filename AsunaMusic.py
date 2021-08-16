@@ -124,15 +124,11 @@ def a(client, message):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
             quote=False
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton('Kanal🇦🇿', url='https://t.me/zenmusiqi'),
-                        InlineKeyboardButton('Qrupa əlavə et', url='https://t.me/song_azbot?startgroup=true')
-                    ]
-                ]
-            )
-    
+            markup_inline = types.InlineKeyboardMarkup()
+            item_yes = types.InlineKeyboardButton(text = 'PlayList🎵', url = 'https://t.me/zenmusiqi')
+            markup_inline.add(item_yes)
+                reply_markup = markup_inline
+            
         message.reply_audio(audio_file, reply_markup, caption=rep, parse_mode='md', title=title, thumb=thumb_name)
         m.delete()
     except Exception as e:
