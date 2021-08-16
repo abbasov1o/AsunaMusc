@@ -132,7 +132,7 @@ def a(client, message):
                 ]
             ]
         )
-    )
+    
 
         message.reply_audio(audio_file, reply_markup, caption=rep, parse_mode='md', title=title, thumb=thumb_name)
         m.delete()
@@ -210,7 +210,7 @@ def a(client, message):
                 ]
             ]
         )
-    )
+    
     
         message.reply_audio(audio_file, reply_markup, caption=rep, parse_mode='md', title=title, thumb=thumb_name)
         m.delete()
