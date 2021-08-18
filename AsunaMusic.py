@@ -123,6 +123,7 @@ def a(client, message):
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
+            text=BUTTON, 
             quote=False,
             reply_markup=InlineKeyboardMarkup(
             [
@@ -132,6 +133,7 @@ def a(client, message):
                 ]
             ]
         )
+    
     
 
         message.reply_audio(audio_file, reply_markup, caption=rep, parse_mode='md', title=title, thumb=thumb_name)
