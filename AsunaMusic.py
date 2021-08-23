@@ -15,7 +15,7 @@ from pyrogram.types import Message, Chat, InlineKeyboardMarkup, InlineKeyboardBu
 import time
 
 import os
-from config import telebot
+from config import TeleBot
 
 bot = telebot.TeleBot(BOT_TOKEN)
 
