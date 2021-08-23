@@ -17,7 +17,7 @@ import time
 import os
 from config import TeleBot
 
-bot = telebot.TeleBot(BOT_TOKEN)
+bot = telebot.TeleBot(token)
 
 
 def a():
