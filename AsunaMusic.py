@@ -17,12 +17,8 @@ import time
 import os
 from config import Config
 
-bot = Client(
-    'AsunaMusic',
-    bot_token = Config.BOT_TOKEN,
-    api_id = Config.API_ID,
-    api_hash = Config.API_HASH
-)
+bot = telebot.TeleBot(TOKEN)
+
 
 def a():
 	BUTTON=[[InlineKeyboardButton(text="🔊 Rəsmi Kanal", url="https://t.me/zenmusiqi")]]
