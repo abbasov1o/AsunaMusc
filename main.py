@@ -45,7 +45,7 @@ async def recognize(path):
     out = await shazam.recognize_song(path)
     return out
 
-@bot.message_handler(content_types=["audio", "voice"])
+@TG.message_handler(content_types=["audio", "voice"])
 def handle_audio(message):
     type_is_voice = message.content_type == "voice"
     file_id = message.voice.file_id if type_is_voice else message.audio.file_id
