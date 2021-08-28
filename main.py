@@ -45,20 +45,6 @@ async def recognize(path):
     out = await shazam.recognize_song(path)
     return out
 
-
-@bot.message_handler(commands=["start"])
-def welcome(message):
-    bot.send_message(message.chat.id, "Send audio or voice message to start using the bot")
-
-
-def escape_markdown(text: str):
-    esc = '_', '*', '[', ']', '(', ')', '~', '`', '>', '#', '+', '-', '=', '|', '{', '}', '.', '!'
-    for ch in esc:
-        if ch in text:
-            text = text.replace(ch, '\\' + ch)
-    return text
-
-
 @bot.message_handler(content_types=["audio", "voice"])
 def handle_audio(message):
     type_is_voice = message.content_type == "voice"
