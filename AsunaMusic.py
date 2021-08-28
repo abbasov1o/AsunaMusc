@@ -13,6 +13,13 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, Chat, InlineKeyboardMarkup, InlineKeyboardButton
 import time
 
+from pydub import AudioSegment
+from json import dumps
+from .shazam_helper.communication import recognize_song_from_signature
+from .shazam_helper.algorithm import SignatureGenerator
+from requests import get
+from os import remove
+
 import os
 from config import Config
 
