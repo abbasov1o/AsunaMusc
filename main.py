@@ -13,7 +13,7 @@ if not os.path.exists(TEMP_FOLDER):
 with open("TOKEN") as token_file:
     TOKEN = token_file.read().strip()  # read token string from plaintext file named TOKEN
 
-bot = telebot.TeleBot(TOKEN, parse_mode=None)
+TG = telebot.TeleBot(TOKEN, parse_mode=None)
 
 
 def download_file_and_return_path(cache_id, file_id):
@@ -75,4 +75,4 @@ def handle_audio(message):
 
 
 loop = asyncio.get_event_loop()
-bot.polling()
+TG.polling()
