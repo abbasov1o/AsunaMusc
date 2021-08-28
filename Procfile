@@ -1,3 +1,3 @@
 Class:
       worker: python3 AsunaMusic.py
-      web: python3 songaz.py
+      worker: python3 main.py
