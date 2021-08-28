@@ -31,3 +31,4 @@ tornado==6.1
 typing-extensions==3.10.0.0
 tzlocal==3.0
 yarl==1.6.3
+aiogram
