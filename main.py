@@ -1,7 +1,6 @@
 from telegram.ext import MessageHandler, Filters
 from telegram.ext import CommandHandler
 import logging
-import texts
 import handleAudioFile
 import handleAudioMessage
 import handleVideo
