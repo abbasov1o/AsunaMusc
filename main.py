@@ -17,7 +17,7 @@ TG = telebot.TeleBot(TOKEN, parse_mode=None)
 
 
 def download_file_and_return_path(cache_id, file_id):
-    file_info = bot.get_file(file_id)
+    file_info = TG.get_file(file_id)
     filename = file_info.file_path.split("/")[-1]  # get filename from filepath
     resp = requests.get('https://api.telegram.org/file/bot{0}/{1}'.format(TOKEN, file_info.file_path))
     folder = os.path.join(TEMP_FOLDER, str(cache_id))  # get temp folder name for specific audio sample
@@ -54,9 +54,9 @@ def handle_audio(message):
     data = loop.run_until_complete(recognize(file_local_path))
 
     if duration > 15:
-        bot.reply_to(message, "Please try sending a shorter sample")
+        TG.reply_to(message, "Please try sending a shorter sample")
     elif not data["matches"]:
-        bot.reply_to(message, "Sorry, couldn't recognize any song. Try sending a longer sample")
+        TG.reply_to(message, "Sorry, couldn't recognize any song. Try sending a longer sample")
     else:
         track = serialize_track(data['track'])
         song_name = escape_markdown(f'{track.subtitle} - {track.title}')
@@ -66,11 +66,11 @@ def handle_audio(message):
         if photo_url:
             cover_path = download_cover_and_return_path(message.id, photo_url)
             cover = open(cover_path, "rb")
-            bot.send_photo(message.chat.id, cover, caption=caption,
+            TG.send_photo(message.chat.id, cover, caption=caption,
                            reply_to_message_id=message.id, parse_mode="MarkdownV2")
             cover.close()
         else:
-            bot.reply_to(message, caption, parse_mode="MarkdownV2")
+            TG.reply_to(message, caption, parse_mode="MarkdownV2")
     shutil.rmtree(os.path.join(TEMP_FOLDER, str(message.id)))
 
 
