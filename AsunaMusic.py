@@ -16,6 +16,8 @@ import time
 
 import os
 from config import Config
+from os import path
+
 
 TG = Client(
     'AsunaMusic',
