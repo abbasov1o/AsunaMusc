@@ -23,6 +23,11 @@ TG = Client(
     api_id = Config.API_ID,
     api_hash = Config.API_HASH
 )
+from configparser import ConfigParser
+from pyrogram import Client
+from shazamio import Shazam, exceptions, FactoryArtist, FactoryTrack
+
+shazam = Shazam()
 
 def a():
 	BUTTON=[[InlineKeyboardButton(text="🔊 Rəsmi Kanal", url="https://t.me/zenmusiqi")]]
