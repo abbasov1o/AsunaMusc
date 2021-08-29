@@ -230,12 +230,6 @@ import os
 
 @TG.on_message(filters.audio | filters.video | filters.voice)
 async def voice_handler(_, message):
-    file_size = message.audio or message.video or message.voice
-    if max_file < file_size.file_size :
-        await message.reply_text(
-            "**⚠️ Max file size has been reached.**"
-        )
-        return
     file = await message.download(f'{TG.rnd_id()}.mp3')
     r = (await TG.recognize(file)).get('track', None)
     os.remove(file)
