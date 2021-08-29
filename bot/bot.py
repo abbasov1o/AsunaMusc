@@ -2,28 +2,17 @@ from os import path
 from configparser import ConfigParser
 from pyrogram import Client
 from shazamio import Shazam, exceptions, FactoryArtist, FactoryTrack
+import os
+from config import Config
 
+bot = Client(
+    'AsunaMusic',
+    bot_token = Config.BOT_TOKEN,
+    api_id = Config.API_ID,
+    api_hash = Config.API_HASH,
+    plugins = {'root': path.join(__package__, 'plugins')}
+)
 shazam = Shazam()
-
-
-class bot(Client):
-    def __init__(self, name):
-        config_file = f"{name}.ini"
-        config = ConfigParser()
-        config.read(config_file)
-        name = name.lower()
-        plugins = {'root': path.join(__package__, 'plugins')}
-        api_id = config.get('pyrogram', 'api_id')
-        api_hash = config.get('pyrogram', 'api_hash')
-        super().__init__(
-            name,
-            api_id=api_id,
-            api_hash=api_hash,
-            config_file=config_file,
-            workers=16,
-            plugins=plugins,
-            workdir="./",
-        )
 
 
     async def recognize(self, path):
