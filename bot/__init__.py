@@ -1,8 +1,6 @@
 import logging
 from configparser import ConfigParser
 
-from bot.bot import bot
-
 # Logging at the start to catch everything
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
