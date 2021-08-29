@@ -22,6 +22,5 @@ pyromod==1.5
 PySocks==1.7.1
 shazamio==0.0.2
 typing-extensions==3.7.4.3
-unknown
 yarl==1.6.3
 
