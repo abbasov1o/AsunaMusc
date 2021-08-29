@@ -18,7 +18,6 @@ multidict==5.1.0
 numpy==1.20.1
 pyaes==1.6.1
 pydub==0.24.1
-Pyrogram==1.2.5
 pyromod==1.5
 PySocks==1.7.1
 shazamio==0.0.2
