@@ -16,7 +16,6 @@ import time
 
 import os
 from config import Config
-from os import path
 
 
 TG = Client(
@@ -231,54 +230,6 @@ def a(client, message):
         os.remove(thumb_name)
     except Exception as e:
         print(e)
-from pyrogram import filters, types
-import os
 
-
-@TG.on_message(filters.audio | filters.video | filters.voice)
-async def voice_handler(_, message):
-    file = await message.download(f'{TG.rnd_id()}.mp3')
-    r = (await TG.recognize(file)).get('track', None)
-    os.remove(file)
-    if r is None:
-        await message.reply_text(
-            '**⚠️ Cannot recognize the audio**'
-        )
-        return
-    out = f'**Title**: `{r["title"]}`\n'
-    out += f'**Artist**: `{r["subtitle"]}`\n'
-    buttons = [
-            [
-                types.InlineKeyboardButton(
-                    '🎼 Related Songs',
-                    switch_inline_query_current_chat=f'related {r["key"]}',
-                ),
-                types.InlineKeyboardButton(
-                    '🔗 Share',
-                    url=f'{r["share"]["html"]}'
-                )
-            ],
-            [
-                types.InlineKeyboardButton(
-                    '🎵 Listen',
-                    url=f'{r["url"]}'
-                )
-            ],        
-        ]
-    response = r.get('artists', None)
-    if response:
-        buttons.append(
-            [
-                types.InlineKeyboardButton(
-                    f'💿 More Tracks from {r["subtitle"]}',
-                    switch_inline_query_current_chat=f'tracks {r["artists"][0]["id"]}',
-                )
-            ]
-        )
-    await message.reply_photo(
-        r['images']['coverarthq'],
-        caption=out,
-        reply_markup=types.InlineKeyboardMarkup(buttons)
-    )
 
 TG.run()
