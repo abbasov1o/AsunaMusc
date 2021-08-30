@@ -22,7 +22,8 @@ TG = Client(
     'AsunaMusic',
     bot_token = Config.BOT_TOKEN,
     api_id = Config.API_ID,
-    api_hash = Config.API_HASH
+    api_hash = Config.API_HASH,
+    bot_name = Config.BOT_NAME
 )
 from configparser import ConfigParser
 from pyrogram import Client
