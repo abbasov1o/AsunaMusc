@@ -17,13 +17,17 @@ import time
 import os
 from config import Config
 
+API_ID = os.getenv("API_ID")
+API_HASH = os.getenv("API_HASH")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+BOT_NAME = os.getenv("BOT_NAME")
+
 
 TG = Client(
     'AsunaMusic',
     bot_token = Config.BOT_TOKEN,
     api_id = Config.API_ID,
-    api_hash = Config.API_HASH,
-    bot_name = Config.BOT_NAME
+    api_hash = Config.API_HASH
 )
 from configparser import ConfigParser
 from pyrogram import Client
