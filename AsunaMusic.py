@@ -43,39 +43,37 @@ async def time_to_seconds(time):
 
 
 ## Commands --------------------------------
-@TG.on_message(filters.command("start")&filters.private)
-def start(client, message):
-    Asuna = f'👋Salam {message.from_user.mention}\nMusiqi yükləmə botuyam💿\n\nNümunə:`/musiqi Miro Sevgin batsın`'
-    message.reply_text(
-        text=Asuna, 
-        quote=False,
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+
+
+@TG.on_message(filters.command("start") & filters.private & ~filters.channel)
+async def start(_, message: Message):
+    await message.reply_text(
+        f"""Salam!{message.from_user.mention}\nMən sənin asanlıqla istədiyin mahnını yükləməyə kömək edəcək botam✅.\n\nNümunə:\n/musiqi Əlimdə Roza 🎵!""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('PlayList🇦🇿', url='https://t.me/zenmusiqi'),
-                    InlineKeyboardButton('Qrupa əlavə et➕', url='https://t.me/song_azbot?startgroup=true')
-                ]
-            ]
-        )
-    )
-
-@TG.on_message(filters.command("start")&filters.group)
-def start(client, message):
-    Asuna = f'👋Salam {message.from_user.mention}\nMusiqi yükləmə botuyam💿\n\nNümunə:`/musiqi Miro Sevgin batsın`'
-    message.reply_text(
-        text=Asuna, 
-        quote=False,
-        reply_markup=InlineKeyboardMarkup(
-            [
+                    InlineKeyboardButton(
+                        "✅Qrupa əlavə et", url="https://t.me/song_azbot?startgroup=true")
+                ],
                 [
-                    InlineKeyboardButton('PlayList🇦🇿', url='https://t.me/zenmusiqi'),
-                    InlineKeyboardButton('Qrupa əlavə et➕', url='https://t.me/song_azbot?startgroup=true')
+                    InlineKeyboardButton(
+                        "🛎Rəsmi Qrupumuz", url="https://t.me/songazerbaycan"),
+                    InlineKeyboardButton(
+                        "☑️ Rəsmi kanal", url="https://t.me/elisbots")     
+                ],[ 
+                    InlineKeyboardButton(
+                        "👨🏻‍💻Sahibim", url="t.me/el1is"
+                        )
                 ]
             ]
-        )
+        ),
+        disable_web_page_preview=True,
     )
 
-@TG.on_message(filters.command("musiqi")&filters.private)
+
+@TG.on_message(filters.command("musiqi") & filters.private & ~filters.channel)
 def a(client, message):
     query = ''
     for i in message.command[1:]:
