@@ -50,7 +50,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 @TG.on_message(filters.command("start") & filters.private & ~filters.channel)
 async def start(_, message: Message):
     await message.reply_text(
-        f"""Salam!{message.from_user.mention}\nMən sənin asanlıqla istədiyin mahnını yükləməyə kömək edəcək botam✅.\n\nNümunə:\n/musiqi Əlimdə Roza 🎵!""",
+        f"""Salam! {message.from_user.mention}👤\nMən sənin asanlıqla istədiyin mahnını yükləməyə kömək edəcək botam✅.\n\nNümunə:\n/musiqi Əlimdə Roza 🎵!""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -64,7 +64,7 @@ async def start(_, message: Message):
                         "☑️ Rəsmi kanal", url="https://t.me/elisbots")     
                 ],[ 
                     InlineKeyboardButton(
-                        "👨🏻‍💻Sahibim", url="t.me/el1is"
+                        "🇦🇿PlayList", url="t.me/zenmusiqi"
                         )
                 ]
             ]
