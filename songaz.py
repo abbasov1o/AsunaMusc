@@ -40,7 +40,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 
-@TG.on_message(filters.command("start") & filters.private & ~filters.channel)
+@TG.on_message(filters.command("/start") & filters.private & ~filters.channel)
 async def start(_, message: Message):
     await message.reply_text(
         f"""Salam! {message.from_user.mention}👤\nMən sənin asanlıqla istədiyin mahnını yükləməyə kömək edəcək botam✅.\n\nNümunə:\n/musiqi Əlimdə Roza 🎵!""",
@@ -65,32 +65,8 @@ async def start(_, message: Message):
         disable_web_page_preview=True,
     )
 
-@TG.on_message(filters.command("musiqi") & filters.private & ~filters.channel)
-async def song(_, message: Message):
-    await message.reply_text(
-        f"""🇦🇿🎶Xoş Dinləmələr \n\n✅Yüklədi: [Song🇦🇿](https://t.me/song_azbot) \n↗️PlayList: [Toxun🎵](https://t.me/zenmusiqi)""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "✅Qrupa əlavə et", url="https://t.me/song_azbot?startgroup=true")
-                ],
-                [
-                    InlineKeyboardButton(
-                        "🛎Rəsmi Qrupumuz", url="https://t.me/songazerbaycan"),
-                    InlineKeyboardButton(
-                        "☑️ Rəsmi kanal", url="https://t.me/elisbots")     
-                ],[ 
-                    InlineKeyboardButton(
-                        "🇦🇿PlayList", url="t.me/zenmusiqi"
-                        )
-                ]
-            ]
-        ),
-        disable_web_page_preview=True,
-    )
     
-@TG.on_message(filters.command("musiqi") & filters.private & ~filters.channel)
+@TG.on_message(filters.command("/musiqi") & filters.private & ~filters.channel)
 def song(client, message: Message):
     query = ''
     for i in message.command[1:]:
