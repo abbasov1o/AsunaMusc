@@ -2,7 +2,9 @@
 from pyrogram import Client, filters
 from pyrogram.types import (
     InlineKeyboardButton,
-    InlineKeyboardMarkup
+    InlineKeyboardMarkup,
+    ReplyKeyboardButton,
+    ReplyKeyboardMarkup
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 import youtube_dl
