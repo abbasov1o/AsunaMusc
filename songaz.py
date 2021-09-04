@@ -116,7 +116,7 @@ def song(client, message: Message):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
             quote=False,
-            await message.reply_text(
+            async await message.reply_text(
             reply_markup=ReplyKeyboardMarkup(
             [
                 [
