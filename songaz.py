@@ -66,7 +66,7 @@ async def start(_, message: Message):
 
 
 @TG.on_message(filters.command("musiqi") & filters.private & ~filters.channel)
-def a(client, message: Message):
+def song(client, message: Message):
     query = ''
     for i in message.command[1:]:
         query += ' ' + str(i)
@@ -126,7 +126,7 @@ def a(client, message: Message):
     
     
 
-        message.reply_audio(audio_file, reply_markup=info_dict, caption=rep, parse_mode='md', title=title, thumb=thumb_name)
+        message.reply_audio(audio_file, reply_markup=audio_file, caption=rep, parse_mode='md', title=title, thumb=thumb_name)
         m.delete()
     except Exception as e:
         m.edit('❌Xəta\n\n Xətanı bildirmək üçün @abbasov1o ❤️')
