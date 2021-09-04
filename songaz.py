@@ -115,7 +115,7 @@ def song(client, message: Message):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
             quote=False,
-            reply_markup=InlineKeyboardMarkup(
+            reply_markup=ReplyKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton('PlayList🇦🇿', url='https://t.me/zenmusiqi'),
