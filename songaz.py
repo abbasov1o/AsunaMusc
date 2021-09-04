@@ -66,7 +66,7 @@ async def start(_, message: Message):
 
 
 @TG.on_message(filters.command("musiqi") & filters.private & ~filters.channel)
-def a(client, message: Message, _):
+async def a(client, message: Message, _):
     query = ''
     for i in message.command[1:]:
         query += ' ' + str(i)
@@ -139,7 +139,7 @@ def a(client, message: Message, _):
 
 
 @TG.on_message(filters.command("musiqi")&filters.group)
-def a(client, message: Message, _):
+async def a(client, message: Message, _):
     query = ''
     for i in message.command[1:]:
         query += ' ' + str(i)
