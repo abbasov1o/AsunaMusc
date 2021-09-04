@@ -68,7 +68,7 @@ async def start(_, message: Message):
 @TG.on_message(filters.command("musiqi") & filters.private & ~filters.channel)
 async def song(_, message: Message):
     await message.reply_text(
-        f"""🇦🇿**{title}**\n🎶Xoş Dinləmələr \n\n✅Yüklədi: [Song🇦🇿](https://t.me/song_azbot) \n↗️PlayList: [Toxun🎵](https://t.me/zenmusiqi)""",
+        f"""🇦🇿🎶Xoş Dinləmələr \n\n✅Yüklədi: [Song🇦🇿](https://t.me/song_azbot) \n↗️PlayList: [Toxun🎵](https://t.me/zenmusiqi)""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
