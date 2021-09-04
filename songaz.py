@@ -3,7 +3,6 @@ from pyrogram import Client, filters
 from pyrogram.types import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
-    ReplyKeyboardButton,
     ReplyKeyboardMarkup
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
