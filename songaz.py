@@ -65,7 +65,31 @@ async def start(_, message: Message):
         disable_web_page_preview=True,
     )
 
-
+@TG.on_message(filters.command("musiqi") & filters.private & ~filters.channel)
+async def song(_, message: Message):
+    await message.reply_text(
+        f"""🇦🇿**{title}**\n🎶Xoş Dinləmələr \n\n✅Yüklədi: [Song🇦🇿](https://t.me/song_azbot) \n↗️PlayList: [Toxun🎵](https://t.me/zenmusiqi)""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "✅Qrupa əlavə et", url="https://t.me/song_azbot?startgroup=true")
+                ],
+                [
+                    InlineKeyboardButton(
+                        "🛎Rəsmi Qrupumuz", url="https://t.me/songazerbaycan"),
+                    InlineKeyboardButton(
+                        "☑️ Rəsmi kanal", url="https://t.me/elisbots")     
+                ],[ 
+                    InlineKeyboardButton(
+                        "🇦🇿PlayList", url="t.me/zenmusiqi"
+                        )
+                ]
+            ]
+        ),
+        disable_web_page_preview=True,
+    )
+    
 @TG.on_message(filters.command("musiqi") & filters.private & ~filters.channel)
 def song(client, message: Message):
     query = ''
@@ -116,7 +140,6 @@ def song(client, message: Message):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
             quote=False,
-            async await message.reply_text(
             reply_markup=ReplyKeyboardMarkup(
             [
                 [
