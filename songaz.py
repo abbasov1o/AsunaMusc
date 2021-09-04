@@ -116,6 +116,7 @@ def song(client, message: Message):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
             quote=False,
+            await message.reply_text(
             reply_markup=ReplyKeyboardMarkup(
             [
                 [
@@ -123,8 +124,9 @@ def song(client, message: Message):
                     InlineKeyboardButton('Qrupa əlavə et➕', url='https://t.me/song_azbot?startgroup=true')
                 ]
             ]
-        )
-    
+),
+        disable_web_page_preview=True,
+    )                
     
 
         message.reply_audio(audio_file, reply_markup, caption=rep, parse_mode='md', title=title, thumb=thumb_name)
