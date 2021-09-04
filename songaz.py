@@ -40,7 +40,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 
-@TG.on_message(filters.command("/start") & filters.private & ~filters.channel)
+@TG.on_message(filters.command("start") & filters.private & ~filters.channel)
 async def start(_, message: Message):
     await message.reply_text(
         f"""Salam! {message.from_user.mention}👤\nMən sənin asanlıqla istədiyin mahnını yükləməyə kömək edəcək botam✅.\n\nNümunə:\n/musiqi Əlimdə Roza 🎵!""",
@@ -66,7 +66,7 @@ async def start(_, message: Message):
     )
 
     
-@TG.on_message(filters.command("/musiqi") & filters.private & ~filters.channel)
+@TG.on_message(filters.command("musiqi") & filters.private & ~filters.channel)
 def song(client, message: Message):
     query = ''
     for i in message.command[1:]:
