@@ -118,4 +118,4 @@ def a(client, message):
         print(e)
 
 
-TG.run()
+bot.run()
