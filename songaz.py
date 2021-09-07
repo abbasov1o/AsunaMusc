@@ -16,7 +16,7 @@ import time
 
 
 import os
-from apim import Config
+from config import Config
 
 API_ID = os.getenv("API_ID")
 API_HASH = os.getenv("API_HASH")
