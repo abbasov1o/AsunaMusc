@@ -41,7 +41,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 
 @TG.on_message(filters.command("start") & filters.private & ~filters.channel)
-async def start(_, message: Message):
+async def start(_, message):
     await message.reply_text(
         f"""Salam! {message.from_user.mention}👤\nMən sənin asanlıqla istədiyin mahnını yükləməyə kömək edəcək botam✅\nBotda reklam vermək istəsən sahibimlə əlaqə saxla.\n\nNümunə:\n/musiqi Əlimdə Roza 🎵!""",
         reply_markup=InlineKeyboardMarkup(
@@ -67,7 +67,7 @@ async def start(_, message: Message):
 
     
 @TG.on_message(filters.command("musiqi") & filters.private & ~filters.channel)
-def a(client, message: Message):
+def a(client, message):
     query = ''
     for i in message.command[1:]:
         query += ' ' + str(i)
