@@ -67,7 +67,7 @@ async def start(_, message: Message):
 
     
 @TG.on_message(filters.command("musiqi") & filters.private & ~filters.channel)
-def song(client, message: Message):
+def a(client, message: Message):
     query = ''
     for i in message.command[1:]:
         query += ' ' + str(i)
