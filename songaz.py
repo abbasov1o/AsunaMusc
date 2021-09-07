@@ -29,10 +29,6 @@ async def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
 
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-
-
 @TG.on_message(filters.command("start") & filters.private & ~filters.channel)
 async def start(_, message):
     await message.reply_text(
