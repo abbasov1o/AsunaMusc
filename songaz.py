@@ -17,7 +17,7 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 BOT_NAME = os.getenv("BOT_NAME")
 
 
-TG = Client(
+bot = Client(
     'AsunaMusic',
     bot_token = Config.BOT_TOKEN,
     api_id = Config.API_ID,
@@ -29,7 +29,7 @@ async def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
 
-@TG.on_message(filters.command("start") & filters.private & ~filters.channel)
+@bot.on_message(filters.command(['start']))
 async def start(_, message):
     await message.reply_text(
         f"""Salam! {message.from_user.mention}👤\nMən sənin asanlıqla istədiyin mahnını yükləməyə kömək edəcək botam✅\nBotda reklam vermək istəsən sahibimlə əlaqə saxla.\n\nNümunə:\n/musiqi Əlimdə Roza 🎵!""",
@@ -55,7 +55,7 @@ async def start(_, message):
     )
 
     
-@TG.on_message(filters.command("musiqi") & filters.private & ~filters.channel)
+@bot.on_message(filters.command(['musiqi']))
 def a(client, message):
     query = ''
     for i in message.command[1:]:
